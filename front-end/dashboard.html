@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Banking App — Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="dash-header">
+      <h1>Dashboard</h1>
+      <a class="button hollow" href="index.html">Back to Home</a>
+    </header>
+
+    <section class="card">
+      <h3>Customers</h3>
+      <p id="noCust" class="muted">Loading...</p>
+      <table id="custTable" class="table" hidden>
+        <thead>
+          <tr>
+            <th>Account #</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Type</th>
+            <th>Balance</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="custBody"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h3>Quick Transfer</h3>
+      <form id="transferForm" class="form-inline">
+        <input id="fromAcc" placeholder="From account #" required />
+        <input id="toAcc" placeholder="To account #" required />
+        <input id="amount" placeholder="Amount" inputmode="decimal" required />
+        <button type="submit">Transfer</button>
+      </form>
+      <p id="transferMsg" class="msg"></p>
+    </section>
+
+    <section class="card">
+      <h3>Transactions (last 20)</h3>
+      <div id="txnList" class="muted">Loading...</div>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

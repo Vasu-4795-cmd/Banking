@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Banking App — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Welcome to Banking App</h1>
+    <p class="lead">
+      Manage customers, transactions and transfers. This client talks to the backend API.
+    </p>
+
+    <section class="card">
+      <h3>Customer Registration</h3>
+      <form id="regForm" class="form">
+        <div class="row">
+          <label>Name</label>
+          <input id="name" type="text" required />
+        </div>
+        <div class="row">
+          <label>Email</label>
+          <input id="email" type="email" placeholder="example@gmail.com" required />
+        </div>
+        <div class="row">
+          <label>Mobile No</label>
+          <input id="mobile" type="tel" placeholder="10 digits" required />
+        </div>
+        <div class="row">
+          <label>PIN</label>
+          <input id="pin" type="password" maxlength="4" inputmode="numeric" pattern="\d{4}" required />
+        </div>
+        <div class="row">
+          <label>Account Type</label>
+          <select id="acctType" required>
+            <option value="">-- choose --</option>
+            <option value="Savings">Savings</option>
+            <option value="Current">Current</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="addBtn" type="submit">Add Customer</button>
+          <a class="button hollow" href="dashboard.html">Go to Dashboard</a>
+        </div>
+
+        <p id="msg" class="msg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

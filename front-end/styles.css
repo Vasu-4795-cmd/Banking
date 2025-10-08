@@ -1,0 +1,25 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#fff;
+  --accent:#2563eb;
+  --muted:#666;
+  --danger:#dc2626;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#111}
+.container{max-width:900px;margin:36px auto;padding:0 18px}
+h1{margin:0 0 8px;font-size:28px}
+.lead{margin:0 0 18px;color:var(--muted)}
+.card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 4px 18px rgba(20,20,40,0.06);margin-bottom:18px}
+.form .row{margin-bottom:10px;display:flex;flex-direction:column}
+.form label{font-size:13px;margin-bottom:6px;color:var(--muted)}
+.form input,.form select{padding:8px 10px;border-radius:6px;border:1px solid #d7dee9;font-size:14px}
+.actions{display:flex;gap:8px;align-items:center;margin-top:8px}
+.button,button{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;border:none;text-decoration:none;cursor:pointer}
+.button.hollow{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.msg{margin-top:8px;color:var(--danger)}
+.table{width:100%;border-collapse:collapse;margin-top:8px}
+.table th,.table td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left;font-size:14px}
+.form-inline{display:flex;gap:8px;flex-wrap:wrap}
+.dash-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.muted{color:var(--muted);font-size:13px}
