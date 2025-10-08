@@ -1,0 +1,15 @@
+●	PINs are stored in plaintext in this demo for simplicity. Do not do this in production — hash PINs (bcrypt) and use proper auth.
+
+●	This code is intended for local/dev/testing (demo). For production, add authentication, rate limiting, input sanitization, CSRF protection, HTTPS, and proper error handling.
+
+●	If you want a version using Node/Express + MySQL, or a Docker Compose setup (backend + MySQL), tell me and I’ll produce it next.
+
+________________________________________
+If you want, I can:
+●	package everything into a ready-to-download zip (I can generate files here), or
+
+●	produce a Docker Compose file (Flask + MySQL) for production-like environment, or
+
+●	convert backend to Node/Express + MySQL.
+
+Which of those would you like next?

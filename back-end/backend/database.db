@@ -1,0 +1,55 @@
+SQLite (recommended for local/dev)
+●	The Flask app will create bank.db automatically if DATABASE_URL=sqlite:///bank.db.
+
+●	If you want an explicit SQL file for SQLite schema, here it is (sqlite_schema.sql):
+
+-- sqlite_schema.sql
+CREATE TABLE customers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  account_no TEXT NOT NULL UNIQUE,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL UNIQUE,
+  mobile TEXT NOT NULL UNIQUE,
+  pin TEXT NOT NULL,
+  type TEXT NOT NULL,
+  balance NUMERIC DEFAULT 0,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE transactions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  txn_id TEXT NOT NULL UNIQUE,
+  type TEXT NOT NULL,
+  amount NUMERIC NOT NULL,
+  details TEXT,
+  timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+MySQL schema (if you prefer MySQL) — mysql_schema.sql
+-- mysql_schema.sql
+CREATE DATABASE IF NOT EXISTS bank_app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE bank_app;
+
+CREATE TABLE customers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  account_no VARCHAR(64) NOT NULL UNIQUE,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  mobile VARCHAR(20) NOT NULL UNIQUE,
+  pin VARCHAR(10) NOT NULL,
+  type VARCHAR(50) NOT NULL,
+  balance DECIMAL(15,2) DEFAULT 0.00,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE transactions (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  txn_id VARCHAR(64) NOT NULL UNIQUE,
+  type VARCHAR(50) NOT NULL,
+  amount DECIMAL(15,2) NOT NULL,
+  details TEXT,
+  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+If you use MySQL, set DATABASE_URL like:
+ mysql+pymysql://dbuser:dbpass@localhost:3306/bank_app and install pymysql (pip install pymysql).

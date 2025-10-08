@@ -1,0 +1,31 @@
+1.	Clone or copy files:
+
+○	Put frontend files in frontend/.
+
+○	Put backend files in backend/.
+
+2.	Create virtual env and install:
+
+cd backend
+python -m venv venv
+source venv/bin/activate    # on Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+3.	Configure .env (optional). Default uses sqlite:///bank.db.
+
+4.	Initialize DB (optional):
+
+flask --app app init-db
+# or python create_sqlite.py
+
+5.	Run the Flask app:
+
+python app.py
+# or FLASK_APP=app FLASK_ENV=development flask run --host=0.0.0.0 --port=3000
+
+6.	Open the frontend in a browser:
+
+●	Visit http://127.0.0.1:3000/ — the flask app serves the frontend static folder.
+
+●	Dashboard is at http://127.0.0.1:3000/dashboard.html
+

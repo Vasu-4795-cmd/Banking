@@ -1,0 +1,15 @@
+●	GET /api/customers — list customers
+
+●	POST /api/customers — create customer ({name,email,mobile,pin,type})
+
+●	GET /api/customers/<account_no> — get one customer
+
+●	DELETE /api/customers/<account_no> — delete customer
+
+●	POST /api/customers/<account_no>/deposit — {amount}
+
+●	POST /api/customers/<account_no>/withdraw — {amount}
+
+●	POST /api/transfer — {from,to,amount}
+
+●	GET /api/transactions?limit=20 — list transactions
